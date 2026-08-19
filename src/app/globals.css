@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-poppins: var(--font-poppins), sans-serif;
+}
+
+@layer base {
+  html, body {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent; 
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
