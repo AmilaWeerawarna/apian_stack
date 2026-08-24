@@ -14,7 +14,8 @@ export default function AboutPage() {
       <Navbar />
 
       <div className="flex-grow w-full pt-32 pb-24 px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10 overflow-hidden">
-        <div className="max-w-[1200px] mx-auto space-y-24">
+        {/* Changed max-w-[1200px] to max-w-[1700px] to match the Products page width */}
+        <div className="max-w-[1700px] mx-auto space-y-24">
           
           {/* --- SECTION 1: OUR MISSION --- */}
           <section className="text-center flex flex-col items-center">
