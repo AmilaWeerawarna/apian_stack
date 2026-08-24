@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation"; // 1. අලුතින් import කරන ලද කොටස
 import { 
   Home, 
   Package, 
@@ -15,6 +16,7 @@ import {
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname(); // 2. දැනට සිටින page එක හඳුනාගැනීමට මෙය යොදා ගනී
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -31,19 +33,19 @@ export default function Navbar() {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { name: "Home", href: "#home", icon: Home },
-    { name: "Products", href: "#products", icon: Package },
-    { name: "Services", href: "#services", icon: Briefcase },
-    { name: "Tech Stack", href: "#tech-stack", icon: Code2 },
-    { name: "About", href: "#about", icon: User },
-    { name: "Contact", href: "#contact", icon: Mail },
+    { name: "Home", href: "/", icon: Home },
+    { name: "Products", href: "/#products", icon: Package },
+    { name: "Services", href: "/#services", icon: Briefcase },
+    { name: "Tech Stack", href: "/#tech-stack", icon: Code2 }, 
+    { name: "Contact", href: "/#contact", icon: Mail },
+    { name: "About", href: "/about", icon: User }
   ];
 
   return (
     <>
       <header className="w-full bg-[#050505]/90 backdrop-blur-md supports-[backdrop-filter]:bg-[#050505]/80 fixed top-0 left-0 z-50 border-b border-gray-800/80">
         <div className="w-full px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <Link href="#home" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-2">
+          <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-2">
             <span className="text-yellow-500 text-2xl font-black">❖</span>
             <span className="text-xl md:text-2xl font-bold tracking-wide text-white">
               apian<span className="font-light text-gray-400">stack</span>
@@ -52,7 +54,9 @@ export default function Navbar() {
 
           <nav className="hidden lg:flex items-center gap-8 text-sm font-medium">
             {navLinks.map((link) => {
-              const isActive = link.name === "Home";
+              // 3. මෙහිදී path එකට අනුව අදාළ ලින්ක් එක active වේ
+              const isActive = pathname === link.href || (pathname === "/" && link.name === "Home");
+              
               return (
                 <Link 
                   key={link.name} 
@@ -97,7 +101,9 @@ export default function Navbar() {
 
           {navLinks.map((link, index) => {
             const IconComponent = link.icon;
-            const isActive = link.name === "Home";
+            
+            // 4. Mobile menu එකටත් අදාළව මෙය යොදා ගනී
+            const isActive = pathname === link.href || (pathname === "/" && link.name === "Home");
             
             return (
               <Link
