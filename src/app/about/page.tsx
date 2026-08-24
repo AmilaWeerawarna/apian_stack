@@ -43,7 +43,7 @@ export default function AboutPage() {
               
               {/* Member 1: Lahiru */}
               <div className="bg-gradient-to-b from-[#11141a] to-[#0b0c10] border border-gray-800/60 shadow-[0_4px_20px_rgba(0,0,0,0.4)] rounded-2xl p-6 flex flex-col items-center text-center hover:border-amber-500/40 transition-all duration-300 group">
-                <HexagonAvatar image="https://i.pravatar.cc/300?img=11" color="amber" />
+                <HexagonAvatar image="https://freepngimg.com/thumb/man/22654-6-man-thumb.png" color="amber" />
                 <h3 className="text-xl font-bold text-white mb-1 group-hover:text-amber-400 transition-colors">Lahiru Kodisinghe</h3>
                 <p className="text-amber-500 text-xs font-semibold mb-4 tracking-wide">Founder & CEO</p>
                 <p className="text-gray-400 text-xs leading-relaxed mb-8 flex-grow">
@@ -60,7 +60,7 @@ export default function AboutPage() {
 
               {/* Member 2: Tharindu */}
               <div className="bg-gradient-to-b from-[#11141a] to-[#0b0c10] border border-gray-800/60 shadow-[0_4px_20px_rgba(0,0,0,0.4)] rounded-2xl p-6 flex flex-col items-center text-center hover:border-cyan-500/40 transition-all duration-300 group">
-                <HexagonAvatar image="https://i.pravatar.cc/300?img=13" color="cyan" />
+                <HexagonAvatar image="https://freepngimg.com/thumb/man/10-man-png-image.png" color="cyan" />
                 <h3 className="text-xl font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors">Tharindu Jayasena</h3>
                 <p className="text-cyan-400 text-xs font-semibold mb-4 tracking-wide">CTO</p>
                 <p className="text-gray-400 text-xs leading-relaxed mb-8 flex-grow">
@@ -77,7 +77,7 @@ export default function AboutPage() {
 
               {/* Member 3: Dilini */}
               <div className="bg-gradient-to-b from-[#11141a] to-[#0b0c10] border border-gray-800/60 shadow-[0_4px_20px_rgba(0,0,0,0.4)] rounded-2xl p-6 flex flex-col items-center text-center hover:border-amber-500/40 transition-all duration-300 group">
-                <HexagonAvatar image="https://i.pravatar.cc/300?img=5" color="amber" />
+                <HexagonAvatar image="https://freepngimg.com/thumb/woman/82672-business-woman-model-photography-shoulder-free-clipart-hd.png" color="amber" />
                 <h3 className="text-xl font-bold text-white mb-1 group-hover:text-amber-400 transition-colors">Dilini Perera</h3>
                 <p className="text-amber-500 text-xs font-semibold mb-4 tracking-wide">Head of Design</p>
                 <p className="text-gray-400 text-xs leading-relaxed mb-8 flex-grow">
@@ -94,7 +94,7 @@ export default function AboutPage() {
 
               {/* Member 4: Nimesh */}
               <div className="bg-gradient-to-b from-[#11141a] to-[#0b0c10] border border-gray-800/60 shadow-[0_4px_20px_rgba(0,0,0,0.4)] rounded-2xl p-6 flex flex-col items-center text-center hover:border-cyan-500/40 transition-all duration-300 group">
-                <HexagonAvatar image="https://i.pravatar.cc/300?img=15" color="cyan" />
+                <HexagonAvatar image="https://freepngimg.com/thumb/man/22643-4-man.png" color="cyan" />
                 <h3 className="text-xl font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors">Nimesh Fernando</h3>
                 <p className="text-cyan-400 text-xs font-semibold mb-4 tracking-wide">Lead Developer</p>
                 <p className="text-gray-400 text-xs leading-relaxed mb-8 flex-grow">
@@ -185,7 +185,7 @@ export default function AboutPage() {
 
 function SocialBox({ children }: { children: React.ReactNode }) {
   return (
-    <a href="#" className="p-2 rounded-lg border border-gray-700/60 bg-[#08090c] hover:border-gray-400 hover:text-white transition-all duration-300">
+    <a href="#" className="w-10 h-10 flex items-center justify-center rounded-xl border border-gray-700/60 bg-[#12141a] text-gray-400 hover:border-gray-400 hover:text-white transition-all duration-300">
       {children}
     </a>
   );
@@ -193,45 +193,39 @@ function SocialBox({ children }: { children: React.ReactNode }) {
 
 function HexagonAvatar({ image, color }: { image: string, color: 'amber' | 'cyan' }) {
   const strokeColor = color === 'amber' ? '#f59e0b' : '#06b6d4';
-  const glowColor = color === 'amber' ? 'rgba(245, 158, 11, 0.2)' : 'rgba(6, 182, 212, 0.2)';
+  const glowColor = color === 'amber' ? 'rgba(245, 158, 11, 0.5)' : 'rgba(6, 182, 212, 0.5)';
   
   return (
-    <div className="relative w-28 h-28 mb-6 flex items-center justify-center drop-shadow-2xl">
-      {/* Background Tech Grid Lines */}
-      <svg className="absolute inset-0 w-full h-full scale-[1.3] opacity-20 pointer-events-none" viewBox="0 0 100 100">
-          <polygon points="50,0 100,25 100,75 50,100 0,75 0,25" fill="none" stroke={strokeColor} strokeWidth="0.5" />
-          <line x1="50" y1="0" x2="50" y2="100" stroke={strokeColor} strokeWidth="0.5" />
-          <line x1="0" y1="25" x2="100" y2="75" stroke={strokeColor} strokeWidth="0.5" />
-          <line x1="0" y1="75" x2="100" y2="25" stroke={strokeColor} strokeWidth="0.5" />
-      </svg>
+    <div className="relative w-40 h-40 mb-6 flex items-center justify-center">
+      
+      {/* Inner Tech Lines (Behind the Avatar) */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center">
+        <svg className="w-full h-full opacity-30" viewBox="0 0 100 100">
+          <line x1="50" y1="50" x2="50" y2="2" stroke={strokeColor} strokeWidth="0.5" />
+          <line x1="50" y1="50" x2="93" y2="75" stroke={strokeColor} strokeWidth="0.5" />
+          <line x1="50" y1="50" x2="7" y2="75" stroke={strokeColor} strokeWidth="0.5" />
+        </svg>
+      </div>
 
-      {/* Outer Hexagon with Nodes */}
-      <svg className="absolute inset-0 w-full h-full z-10 pointer-events-none" viewBox="0 0 100 100" style={{ filter: `drop-shadow(0 0 8px ${glowColor})` }}>
+      {/* Outer Hexagon with Glow */}
+      <svg className="absolute inset-0 w-full h-full z-10 pointer-events-none" viewBox="0 0 100 100" style={{ filter: `drop-shadow(0 0 10px ${glowColor})` }}>
         <polygon 
           points="50,2 93,25 93,75 50,98 7,75 7,25" 
           fill="none" 
           stroke={strokeColor} 
-          strokeWidth="1.5" 
-          opacity="0.9"
+          strokeWidth="1.2" 
         />
-        {/* Vertex Dots */}
-        <circle cx="50" cy="2" r="2.5" fill={strokeColor} />
-        <circle cx="93" cy="25" r="2.5" fill={strokeColor} />
-        <circle cx="93" cy="75" r="2.5" fill={strokeColor} />
-        <circle cx="50" cy="98" r="2.5" fill={strokeColor} />
-        <circle cx="7" cy="75" r="2.5" fill={strokeColor} />
-        <circle cx="7" cy="25" r="2.5" fill={strokeColor} />
       </svg>
 
-      {/* Profile Image Wrapper */}
+      {/* Profile Image - Transparent background perfectly cropped to Hexagon bounds */}
       <div 
-        className="w-[82%] h-[82%] bg-[#050505] overflow-hidden relative flex items-center justify-center z-20"
+        className="w-[92%] h-[92%] relative z-20 flex items-end justify-center bg-transparent"
         style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}
       >
         <img 
           src={image} 
           alt="Team Member" 
-          className="w-full h-full object-cover scale-110 grayscale-[20%] hover:grayscale-0 transition-all duration-500"
+          className="w-[95%] h-[95%] object-contain object-bottom scale-110 translate-y-1"
         />
       </div>
     </div>
